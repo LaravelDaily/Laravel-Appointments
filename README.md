@@ -12,6 +12,14 @@ You can manage your Services, Employees, Clients and Appointments, viewing them 
 
 System is mostly generated with [QuickAdminPanel](https://2019.quickadminpanel.com), with some small tweaks afterwards.
 
+Other assets used:
+
+- [CoreUI Free theme](https://coreui.io/demo/#main.html) (Bootstrap 4)
+- [FullCalendar library](https://fullcalendar.io/) (version 3)
+
+
+---
+
 ## How to use
 
 - Clone the repository with __git clone__
