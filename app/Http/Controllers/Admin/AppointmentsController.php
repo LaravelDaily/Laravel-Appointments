@@ -14,6 +14,9 @@ use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\Validator;
+use DateTime;
+use DateTimeZone;
 
 class AppointmentsController extends Controller
 {
@@ -91,6 +94,37 @@ class AppointmentsController extends Controller
 
     public function store(StoreAppointmentRequest $request)
     {
+        if (!empty($request)) {
+
+            $now = new DateTime('NOW', new DateTimeZone('Africa/Johannesburg'));
+            $date1 = new DateTime($request->start_time, new DateTimeZone('Africa/Johannesburg'));
+            $date2 = new DateTime($request->finish_time, new DateTimeZone('Africa/Johannesburg'));
+
+            $date1 = $date1->getTimestamp();
+            $date2 = $date2->getTimestamp();
+            $now = $now->getTimestamp();
+
+            $validator = Validator::make($request->all(), $request->rules());
+            
+            if($date1 < $now) {
+                $validator->errors()->add('start_date', 'Start date Cannot be in the past!');
+            }
+
+            if($date1 > $date2) {
+                $validator->errors()->add('start_date', 'Start date must be before the end date!');
+            }
+            $errors = $validator->errors();
+            
+            if($errors->any()) {
+                return redirect()->back()->withInput()->withErrors($errors);
+            }
+            
+            $appointment = Appointment::create($request->all());
+            $appointment->services()->sync($request->input('services', []));
+
+            return redirect()->route('admin.appointments.index');
+        }
+        
         $appointment = Appointment::create($request->all());
         $appointment->services()->sync($request->input('services', []));
 
@@ -143,5 +177,23 @@ class AppointmentsController extends Controller
         Appointment::whereIn('id', request('ids'))->delete();
 
         return response(null, Response::HTTP_NO_CONTENT);
+    }
+
+    public function somethingElseIsInvalid($startDate, $endDate) 
+    {
+        return true;
+        // $date1 = new DateTime($startDate);
+        // $date2 = new DateTime($endDate);
+
+        // $diff = $date2->diff($date1);
+        // $hours = $diff->h;
+        // $hours = $hours + ($diff->days*24);
+        // var_dump($hours);
+        // die;
+
+        if ($startDate >= $endDate){
+            return false;
+        }
+
     }
 }

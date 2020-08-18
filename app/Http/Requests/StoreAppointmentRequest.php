@@ -25,11 +25,16 @@ class StoreAppointmentRequest extends FormRequest
             ],
             'start_time'  => [
                 'required',
+                'unique:appointments,start_time',
                 'date_format:' . config('panel.date_format') . ' ' . config('panel.time_format'),
             ],
             'finish_time' => [
                 'required',
+                'unique:appointments,finish_time',
                 'date_format:' . config('panel.date_format') . ' ' . config('panel.time_format'),
+            ],
+            'price' => [
+                'required'
             ],
             'services.*'  => [
                 'integer',
