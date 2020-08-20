@@ -4,18 +4,18 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmployeeServicePivotTable extends Migration
+class CreateEmployeeProductPivotTable extends Migration
 {
     public function up()
     {
-        Schema::create('employee_service', function (Blueprint $table) {
+        Schema::create('employee_product', function (Blueprint $table) {
             $table->unsignedInteger('employee_id');
 
             $table->foreign('employee_id', 'employee_id_fk_360623')->references('id')->on('employees')->onDelete('cascade');
 
-            $table->unsignedInteger('service_id');
+            $table->unsignedInteger('product_id');
 
-            $table->foreign('service_id', 'service_id_fk_360623')->references('id')->on('services')->onDelete('cascade');
+            $table->foreign('product_id', 'product_id_fk_360623')->references('id')->on('products')->onDelete('cascade');
         });
     }
 }

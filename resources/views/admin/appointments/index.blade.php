@@ -46,6 +46,9 @@
                         {{ trans('cruds.appointment.fields.services') }}
                     </th>
                     <th>
+                        {{ trans('cruds.appointment.fields.products') }}
+                    </th>
+                    <th>
                         &nbsp;
                     </th>
                 </tr>
@@ -108,6 +111,7 @@
 { data: 'price', name: 'price' },
 { data: 'comments', name: 'comments' },
 { data: 'services', name: 'services.name' },
+{ data: 'products', name: 'products.name' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     order: [[ 1, 'desc' ]],

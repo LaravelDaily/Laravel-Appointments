@@ -13,6 +13,9 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
     // Services
     Route::apiResource('services', 'ServicesApiController');
 
+    // Products
+    Route::apiResource('products', 'ProductsApiController');
+
     // Employees
     Route::post('employees/media', 'EmployeesApiController@storeMedia')->name('employees.storeMedia');
     Route::apiResource('employees', 'EmployeesApiController');

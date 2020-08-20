@@ -62,6 +62,16 @@
                     </a>
                 </li>
             @endcan
+            @can('product_access')
+                <li class="nav-item">
+                    <a href="{{ route("admin.products.index") }}" class="nav-link {{ request()->is('admin/products') || request()->is('admin/products/*') ? 'active' : '' }}">
+                        <i class="fa-fw fas fa-cogs nav-icon">
+
+                        </i>
+                        {{ trans('cruds.product.title') }}
+                    </a>
+                </li>
+            @endcan
             @can('employee_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.employees.index") }}" class="nav-link {{ request()->is('admin/employees') || request()->is('admin/employees/*') ? 'active' : '' }}">
