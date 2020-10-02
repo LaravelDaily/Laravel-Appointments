@@ -76,6 +76,16 @@
                             @endforeach
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            Products
+                        </th>
+                        <td>
+                            @foreach($appointment->products as $id => $products)
+                                <span class="label label-info label-many">{{ $products->name }}</span>
+                            @endforeach
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <a style="margin-top:20px;" class="btn btn-default" href="{{ url()->previous() }}">

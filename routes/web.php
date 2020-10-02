@@ -22,6 +22,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('services/destroy', 'ServicesController@massDestroy')->name('services.massDestroy');
     Route::resource('services', 'ServicesController');
 
+    // Products
+    Route::delete('products/destroy', 'ProductsController@massDestroy')->name('products.massDestroy');
+    Route::resource('products', 'ProductsController');
+
     // Employees
     Route::delete('employees/destroy', 'EmployeesController@massDestroy')->name('employees.massDestroy');
     Route::post('employees/media', 'EmployeesController@storeMedia')->name('employees.storeMedia');

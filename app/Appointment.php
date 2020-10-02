@@ -52,4 +52,9 @@ class Appointment extends Model
     {
         return $this->belongsToMany(Service::class);
     }
+    
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }

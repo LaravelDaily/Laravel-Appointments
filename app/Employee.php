@@ -60,4 +60,9 @@ class Employee extends Model implements HasMedia
     {
         return $this->belongsToMany(Service::class);
     }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }

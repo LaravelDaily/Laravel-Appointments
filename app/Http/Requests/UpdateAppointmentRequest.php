@@ -37,6 +37,12 @@ class UpdateAppointmentRequest extends FormRequest
             'services'    => [
                 'array',
             ],
+            'products.*'  => [
+                'integer',
+            ],
+            'products'    => [
+                'array',
+            ],
         ];
     }
 }

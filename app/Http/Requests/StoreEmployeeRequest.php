@@ -28,6 +28,12 @@ class StoreEmployeeRequest extends FormRequest
             'services'   => [
                 'array',
             ],
+            'products.*'  => [
+                'integer',
+            ],
+            'products'    => [
+                'array',
+            ],
         ];
     }
 }

@@ -11,11 +11,11 @@ class CreateEmployeeServicePivotTable extends Migration
         Schema::create('employee_service', function (Blueprint $table) {
             $table->unsignedInteger('employee_id');
 
-            $table->foreign('employee_id', 'employee_id_fk_360622')->references('id')->on('employees')->onDelete('cascade');
+            $table->foreign('employee_id', 'employee_id_fk_360623')->references('id')->on('employees')->onDelete('cascade');
 
             $table->unsignedInteger('service_id');
 
-            $table->foreign('service_id', 'service_id_fk_360622')->references('id')->on('services')->onDelete('cascade');
+            $table->foreign('service_id', 'service_id_fk_360623')->references('id')->on('services')->onDelete('cascade');
         });
     }
 }

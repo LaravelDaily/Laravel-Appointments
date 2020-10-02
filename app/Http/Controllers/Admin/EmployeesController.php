@@ -21,7 +21,7 @@ class EmployeesController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $query = Employee::with(['services'])->select(sprintf('%s.*', (new Employee)->table));
+            $query = Employee::with(['services','products'])->select(sprintf('%s.*', (new Employee)->table));
             $table = Datatables::of($query);
 
             $table->addColumn('placeholder', '&nbsp;');
@@ -75,7 +75,18 @@ class EmployeesController extends Controller
                 return implode(' ', $labels);
             });
 
-            $table->rawColumns(['actions', 'placeholder', 'photo', 'services']);
+            $table->editColumn('products', function ($row) {
+                $labels = [];
+
+                foreach ($row->products as $product) {
+                    $labels[] = sprintf('<span class="label label-info label-many">%s</span>', $product->name);
+                }
+
+                return implode(' ', $labels);
+            });
+
+
+            $table->rawColumns(['actions', 'placeholder', 'photo', 'services', 'products']);
 
             return $table->make(true);
         }
@@ -88,14 +99,16 @@ class EmployeesController extends Controller
         abort_if(Gate::denies('employee_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $services = Service::all()->pluck('name', 'id');
+        $products = Product::all()->pluck('name', 'id');
 
-        return view('admin.employees.create', compact('services'));
+        return view('admin.employees.create', compact('services', 'products'));
     }
 
     public function store(StoreEmployeeRequest $request)
     {
         $employee = Employee::create($request->all());
         $employee->services()->sync($request->input('services', []));
+        $employee->products()->sync($request->input('products', []));
 
         if ($request->input('photo', false)) {
             $employee->addMedia(storage_path('tmp/uploads/' . $request->input('photo')))->toMediaCollection('photo');
@@ -109,16 +122,18 @@ class EmployeesController extends Controller
         abort_if(Gate::denies('employee_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $services = Service::all()->pluck('name', 'id');
+        $products = Product::all()->pluck('name', 'id');
 
-        $employee->load('services');
+        $employee->load('services','products');
 
-        return view('admin.employees.edit', compact('services', 'employee'));
+        return view('admin.employees.edit', compact('services','products','employee'));
     }
 
     public function update(UpdateEmployeeRequest $request, Employee $employee)
     {
         $employee->update($request->all());
         $employee->services()->sync($request->input('services', []));
+        $employee->products()->sync($request->input('products', []));
 
         if ($request->input('photo', false)) {
             if (!$employee->photo || $request->input('photo') !== $employee->photo->file_name) {

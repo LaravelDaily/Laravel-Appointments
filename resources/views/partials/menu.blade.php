@@ -62,6 +62,16 @@
                     </a>
                 </li>
             @endcan
+            @can('product_access')
+                <li class="nav-item">
+                    <a href="{{ route("admin.products.index") }}" class="nav-link {{ request()->is('admin/products') || request()->is('admin/products/*') ? 'active' : '' }}">
+                        <i class="fa-fw fas fa-cogs nav-icon">
+
+                        </i>
+                        {{ trans('cruds.product.title') }}
+                    </a>
+                </li>
+            @endcan
             @can('employee_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.employees.index") }}" class="nav-link {{ request()->is('admin/employees') || request()->is('admin/employees/*') ? 'active' : '' }}">
@@ -92,14 +102,14 @@
                     </a>
                 </li>
             @endcan
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a href="{{ route("admin.systemCalendar") }}" class="nav-link {{ request()->is('admin/system-calendar') || request()->is('admin/system-calendar/*') ? 'active' : '' }}">
                     <i class="nav-icon fa-fw fas fa-calendar">
 
                     </i>
                     {{ trans('global.systemCalendar') }}
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                     <i class="nav-icon fas fa-fw fa-sign-out-alt">

@@ -31,10 +31,19 @@ class StoreAppointmentRequest extends FormRequest
                 'required',
                 'date_format:' . config('panel.date_format') . ' ' . config('panel.time_format'),
             ],
+            'price' => [
+                'required'
+            ],
             'services.*'  => [
                 'integer',
             ],
             'services'    => [
+                'array',
+            ],
+            'products.*'  => [
+                'integer',
+            ],
+            'products'    => [
                 'array',
             ],
         ];

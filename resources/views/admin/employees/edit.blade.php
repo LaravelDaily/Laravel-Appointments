@@ -78,6 +78,24 @@
                     {{ trans('cruds.employee.fields.services_helper') }}
                 </p>
             </div>
+            <div class="form-group {{ $errors->has('products') ? 'has-error' : '' }}">
+                <label for="products">{{ trans('cruds.employee.fields.products') }}
+                    <span class="btn btn-info btn-xs select-all">{{ trans('global.select_all') }}</span>
+                    <span class="btn btn-info btn-xs deselect-all">{{ trans('global.deselect_all') }}</span></label>
+                <select name="products[]" id="products" class="form-control select2" multiple="multiple">
+                    @foreach($products as $id => $products)
+                        <option value="{{ $id }}" {{ (in_array($id, old('products', [])) || isset($employee) && $employee->products->contains($id)) ? 'selected' : '' }}>{{ $products }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('products'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('products') }}
+                    </em>
+                @endif
+                <p class="helper-block">
+                    {{ trans('cruds.employee.fields.products_helper') }}
+                </p>
+            </div>
             <div>
                 <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
             </div>

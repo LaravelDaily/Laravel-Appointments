@@ -40,6 +40,9 @@
                         {{ trans('cruds.employee.fields.services') }}
                     </th>
                     <th>
+                        {{ trans('cruds.employee.fields.products') }}
+                    </th>
+                    <th>
                         &nbsp;
                     </th>
                 </tr>
@@ -100,6 +103,7 @@
 { data: 'phone', name: 'phone' },
 { data: 'photo', name: 'photo', sortable: false, searchable: false },
 { data: 'services', name: 'services.name' },
+{ data: 'products', name: 'products.name' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     order: [[ 1, 'desc' ]],
