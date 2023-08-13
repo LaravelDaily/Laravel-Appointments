@@ -1,14 +1,14 @@
 {
     "private": true,
     "scripts": {
-    "dev": "npm run development",
-    "development": "mix",
-    "watch": "concurrently \"postcss ./resources/css/app.css -o ./public/dist/css/_app.css --watch\" \"mix watch\"",
-    "watch-poll": "mix watch -- --watch-options-poll=1000",
-    "hot": "mix watch --hot",
-    "prod": "npm run production",
-    "production": "postcss ./resources/sass/app.scss -o ./public/dist/css/_app.css && mix --production",
-    "pint": "./vendor/bin/pint -v"
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production",
+        "pint": "./vendor/bin/pint -v"
     },
     "devDependencies": {
         "@babel/eslint-parser": "^7.22.10",
@@ -20,13 +20,11 @@
         "eslint-webpack-plugin": "^4.0.1",
         "laravel-mix": "^6.0.49",
         "lodash": "^4.17.21",
-        "postcss": "^8.4.27",
-        "postcss-advanced-variables": "^3.0.1",
-        "postcss-cli": "^10.1.0",
-        "postcss-import": "^15.1.0",
         "prettier": "^3.0.1",
         "resolve-url-loader": "^5.0.0",
+        "sass": "^1.65.1",
+        "sass-loader": "^13.3.2",
         "stylelint": "^15.10.2",
-        "sass-loader": "^13.3.2"
+        "webpack": "^5.88.2"
     }
 }
