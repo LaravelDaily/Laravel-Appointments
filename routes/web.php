@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ColorSchemeController;
+use App\Http\Controllers\DarkModeController;
+use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 Route::redirect('/', '/login');
 Route::redirect('/home', '/admin');
 Auth::routes(['register' => false]);

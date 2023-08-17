@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "219ebf7233412ea4abe8f7235c6ad133",
+    "content-hash": "fbf7fd461ffbcd2bb3e79294092bb0f6",
     "packages": [
         {
             "name": "brick/math",
@@ -1622,72 +1622,6 @@
             "time": "2023-07-07T06:37:11+00:00"
         },
         {
-            "name": "laravel/pint",
-            "version": "v1.10.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/pint.git",
-                "reference": "d1915b6ecc6406c00472c6b9ae75b46aa153bbb2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/pint/zipball/d1915b6ecc6406c00472c6b9ae75b46aa153bbb2",
-                "reference": "d1915b6ecc6406c00472c6b9ae75b46aa153bbb2",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "ext-tokenizer": "*",
-                "ext-xml": "*",
-                "php": "^8.1.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.21.1",
-                "illuminate/view": "^10.5.1",
-                "laravel-zero/framework": "^10.1.1",
-                "mockery/mockery": "^1.5.1",
-                "nunomaduro/larastan": "^2.5.1",
-                "nunomaduro/termwind": "^1.15.1",
-                "pestphp/pest": "^2.4.0"
-            },
-            "bin": [
-                "builds/pint"
-            ],
-            "type": "project",
-            "autoload": {
-                "psr-4": {
-                    "App\\": "app/",
-                    "Database\\Seeders\\": "database/seeders/",
-                    "Database\\Factories\\": "database/factories/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nuno Maduro",
-                    "email": "enunomaduro@gmail.com"
-                }
-            ],
-            "description": "An opinionated code formatter for PHP.",
-            "homepage": "https://laravel.com",
-            "keywords": [
-                "format",
-                "formatter",
-                "lint",
-                "linter",
-                "php"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel/pint/issues",
-                "source": "https://github.com/laravel/pint"
-            },
-            "time": "2023-08-08T15:17:16+00:00"
-        },
-        {
             "name": "laravel/prompts",
             "version": "v0.1.4",
             "source": {
@@ -2914,62 +2848,6 @@
                 }
             ],
             "time": "2023-06-21T14:59:35+00:00"
-        },
-        {
-            "name": "magentron/laravel-blade-lint",
-            "version": "1.0.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Magentron/laravel-blade-lint.git",
-                "reference": "c26b7fbf117ef816c4999a4402e1b30fd2f6a2e6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Magentron/laravel-blade-lint/zipball/c26b7fbf117ef816c4999a4402e1b30fd2f6a2e6",
-                "reference": "c26b7fbf117ef816c4999a4402e1b30fd2f6a2e6",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "*"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Magentron\\BladeLint\\Providers\\ServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Magentron\\BladeLint\\": "src/Magentron/BladeLint"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Jeroen Derks",
-                    "email": "jeroen@derks.it",
-                    "homepage": "https://www.derks.it/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Laravel Blade Lint console command",
-            "homepage": "https://github.com/Magentron/laravel-blade-lint",
-            "keywords": [
-                "blade",
-                "console",
-                "laravel",
-                "lint"
-            ],
-            "support": {
-                "issues": "https://github.com/Magentron/laravel-blade-lint/issues",
-                "source": "https://github.com/Magentron/laravel-blade-lint/tree/1.0.7"
-            },
-            "time": "2018-11-28T14:07:44+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -4606,63 +4484,6 @@
                 }
             ],
             "time": "2023-04-15T23:01:58+00:00"
-        },
-        {
-            "name": "sllh/composer-lint",
-            "version": "v2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/soullivaneuh/composer-lint.git",
-                "reference": "acf0b38f1b4efca1b11e7589fa57f7749adf744f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/soullivaneuh/composer-lint/zipball/acf0b38f1b4efca1b11e7589fa57f7749adf744f",
-                "reference": "acf0b38f1b4efca1b11e7589fa57f7749adf744f",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^2.0",
-                "php": "^7.4 || ^8.0"
-            },
-            "require-dev": {
-                "composer/composer": "^2.0",
-                "symfony/phpunit-bridge": "^5.2"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "SLLH\\ComposerLint\\LintPlugin",
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "SLLH\\ComposerLint\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sullivan SENECHAL",
-                    "email": "soullivaneuh@gmail.com"
-                }
-            ],
-            "description": "Extends the composer validate command with extra rules",
-            "keywords": [
-                "composer",
-                "lint",
-                "plugin",
-                "validate"
-            ],
-            "support": {
-                "issues": "https://github.com/soullivaneuh/composer-lint/issues",
-                "source": "https://github.com/soullivaneuh/composer-lint/tree/v2.0.0"
-            },
-            "time": "2021-03-13T15:49:11+00:00"
         },
         {
             "name": "spatie/image",
@@ -7841,6 +7662,128 @@
             "time": "2020-07-09T08:09:16+00:00"
         },
         {
+            "name": "laravel/pint",
+            "version": "v1.10.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/pint.git",
+                "reference": "d1915b6ecc6406c00472c6b9ae75b46aa153bbb2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/pint/zipball/d1915b6ecc6406c00472c6b9ae75b46aa153bbb2",
+                "reference": "d1915b6ecc6406c00472c6b9ae75b46aa153bbb2",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-tokenizer": "*",
+                "ext-xml": "*",
+                "php": "^8.1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.21.1",
+                "illuminate/view": "^10.5.1",
+                "laravel-zero/framework": "^10.1.1",
+                "mockery/mockery": "^1.5.1",
+                "nunomaduro/larastan": "^2.5.1",
+                "nunomaduro/termwind": "^1.15.1",
+                "pestphp/pest": "^2.4.0"
+            },
+            "bin": [
+                "builds/pint"
+            ],
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "App\\": "app/",
+                    "Database\\Seeders\\": "database/seeders/",
+                    "Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nuno Maduro",
+                    "email": "enunomaduro@gmail.com"
+                }
+            ],
+            "description": "An opinionated code formatter for PHP.",
+            "homepage": "https://laravel.com",
+            "keywords": [
+                "format",
+                "formatter",
+                "lint",
+                "linter",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/pint/issues",
+                "source": "https://github.com/laravel/pint"
+            },
+            "time": "2023-08-08T15:17:16+00:00"
+        },
+        {
+            "name": "magentron/laravel-blade-lint",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Magentron/laravel-blade-lint.git",
+                "reference": "c26b7fbf117ef816c4999a4402e1b30fd2f6a2e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Magentron/laravel-blade-lint/zipball/c26b7fbf117ef816c4999a4402e1b30fd2f6a2e6",
+                "reference": "c26b7fbf117ef816c4999a4402e1b30fd2f6a2e6",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Magentron\\BladeLint\\Providers\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Magentron\\BladeLint\\": "src/Magentron/BladeLint"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jeroen Derks",
+                    "email": "jeroen@derks.it",
+                    "homepage": "https://www.derks.it/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel Blade Lint console command",
+            "homepage": "https://github.com/Magentron/laravel-blade-lint",
+            "keywords": [
+                "blade",
+                "console",
+                "laravel",
+                "lint"
+            ],
+            "support": {
+                "issues": "https://github.com/Magentron/laravel-blade-lint/issues",
+                "source": "https://github.com/Magentron/laravel-blade-lint/tree/1.0.7"
+            },
+            "time": "2018-11-28T14:07:44+00:00"
+        },
+        {
             "name": "mockery/mockery",
             "version": "1.6.6",
             "source": {
@@ -9519,6 +9462,63 @@
                 }
             ],
             "time": "2023-02-07T11:34:05+00:00"
+        },
+        {
+            "name": "sllh/composer-lint",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/soullivaneuh/composer-lint.git",
+                "reference": "acf0b38f1b4efca1b11e7589fa57f7749adf744f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/soullivaneuh/composer-lint/zipball/acf0b38f1b4efca1b11e7589fa57f7749adf744f",
+                "reference": "acf0b38f1b4efca1b11e7589fa57f7749adf744f",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^2.0",
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "composer/composer": "^2.0",
+                "symfony/phpunit-bridge": "^5.2"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "SLLH\\ComposerLint\\LintPlugin",
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SLLH\\ComposerLint\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sullivan SENECHAL",
+                    "email": "soullivaneuh@gmail.com"
+                }
+            ],
+            "description": "Extends the composer validate command with extra rules",
+            "keywords": [
+                "composer",
+                "lint",
+                "plugin",
+                "validate"
+            ],
+            "support": {
+                "issues": "https://github.com/soullivaneuh/composer-lint/issues",
+                "source": "https://github.com/soullivaneuh/composer-lint/tree/v2.0.0"
+            },
+            "time": "2021-03-13T15:49:11+00:00"
         },
         {
             "name": "spatie/backtrace",
